@@ -42,5 +42,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 
 func _on_goal_area_area_entered(area: Area2D) -> void:
+	var label = $Timer
+	label.text="goal reached"
 	print("goal reached")
 	pass # Replace with function body.
