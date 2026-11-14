@@ -39,3 +39,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	velocity.x=-velocity.x
 	velocity.y=-velocity.y
 	return;	
+
+
+func _on_goal_area_area_entered(area: Area2D) -> void:
+	print("goal reached")
+	pass # Replace with function body.
