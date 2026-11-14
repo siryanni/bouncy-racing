@@ -28,4 +28,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _on_boundaries_area_entered(area: Area2D) -> void:
+	print("collided")
+	velocity.x=-velocity.x
+	velocity.y=-velocity.y
 	return;	

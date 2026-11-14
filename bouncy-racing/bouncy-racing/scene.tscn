@@ -6,10 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0a00yjdhty4m" path="res://boundaries.tscn" id="4_u3cyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fch8"]
-size = Vector2(29, 15)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7v3m"]
-size = Vector2(119, 7)
+size = Vector2(29, 14.25)
 
 [node name="Node2D" type="Node2D" unique_id=2050125218]
 
@@ -36,17 +33,9 @@ texture = ExtResource("3_u3cyc")
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=696948346]
-position = Vector2(-45, -260)
+position = Vector2(-2, 2.875)
 shape = SubResource("RectangleShape2D_3fch8")
 
-[node name="Boundaries" type="Area2D" parent="." unique_id=516713079]
-position = Vector2(559, 658)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=1161613600]
-position = Vector2(427, 627)
-rotation = -0.116937056
-shape = SubResource("RectangleShape2D_g7v3m")
-
-[node name="Boundaries2" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
+[node name="Boundaries" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
 
 [connection signal="area_entered" from="Boundaries" to="CharacterBody2D" method="_on_boundaries_area_entered"]
