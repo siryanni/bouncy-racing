@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://bnbsl46mb2u7w"]
+
+[ext_resource type="Texture2D" uid="uid://bkvyofjy4xh1x" path="res://map.png" id="1_3253y"]
+[ext_resource type="Script" uid="uid://dpqwpi502h42q" path="res://character_body_2d.gd" id="2_u3cyc"]
+[ext_resource type="Texture2D" uid="uid://dgccdpcgjvleq" path="res://car-sprite.png" id="3_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://c0a00yjdhty4m" path="res://boundaries.tscn" id="4_u3cyc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3fch8"]
+size = Vector2(29, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g7v3m"]
+size = Vector2(119, 7)
+
+[node name="Node2D" type="Node2D" unique_id=2050125218]
+
+[node name="Map" type="Sprite2D" parent="." unique_id=2011843877]
+position = Vector2(588, 314)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_3253y")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1531508817]
+position = Vector2(559, 657)
+script = ExtResource("2_u3cyc")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2067092229]
+position = Vector2(6, -1)
+zoom = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=912023408]
+position = Vector2(-9, -4.000061)
+rotation = 4.712389
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("3_u3cyc")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1784623151]
+position = Vector2(-1, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=696948346]
+position = Vector2(-45, -260)
+shape = SubResource("RectangleShape2D_3fch8")
+
+[node name="Boundaries" type="Area2D" parent="." unique_id=516713079]
+position = Vector2(558, 640)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boundaries" unique_id=1161613600]
+position = Vector2(427, 627)
+rotation = -0.116937056
+shape = SubResource("RectangleShape2D_g7v3m")
+
+[node name="Boundaries2" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
+
+[connection signal="area_entered" from="Boundaries" to="CharacterBody2D" method="_on_boundaries_area_entered"]
