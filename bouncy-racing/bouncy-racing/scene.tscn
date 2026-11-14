@@ -16,31 +16,31 @@ position = Vector2(588, 314)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_3253y")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1531508817]
+[node name="CarCharacter" type="CharacterBody2D" parent="." unique_id=1531508817]
 position = Vector2(559, 657)
 script = ExtResource("2_u3cyc")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=2067092229]
+[node name="CarFollowingCamara" type="Camera2D" parent="CarCharacter" unique_id=2067092229]
 position = Vector2(6, -1)
 zoom = Vector2(3, 3)
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=912023408]
+[node name="CarSprite" type="Sprite2D" parent="CarCharacter" unique_id=912023408]
 position = Vector2(0, 1)
 rotation = 4.712389
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_u3cyc")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D" unique_id=1784623151]
+[node name="CarArea" type="Area2D" parent="CarCharacter" unique_id=1784623151]
 position = Vector2(0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D" unique_id=696948346]
+[node name="CarCollisionShape" type="CollisionShape2D" parent="CarCharacter/CarArea" unique_id=696948346]
 position = Vector2(-2, 2.875)
 shape = SubResource("RectangleShape2D_3fch8")
 
 [node name="Boundaries" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
 position = Vector2(-4, 0)
 
-[node name="Area2D" parent="." unique_id=1379189615 instance=ExtResource("5_m7jmp")]
+[node name="Boundaries2" parent="." unique_id=1379189615 instance=ExtResource("5_m7jmp")]
 
-[connection signal="area_entered" from="Boundaries" to="CharacterBody2D" method="_on_boundaries_area_entered"]
-[connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
+[connection signal="area_entered" from="Boundaries" to="CarCharacter" method="_on_boundaries_area_entered"]
+[connection signal="area_entered" from="Boundaries2" to="CarCharacter" method="_on_area_2d_area_entered"]
