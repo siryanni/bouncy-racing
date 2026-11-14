@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dpqwpi502h42q" path="res://character_body_2d.gd" id="2_u3cyc"]
 [ext_resource type="Texture2D" uid="uid://dgccdpcgjvleq" path="res://car-sprite.png" id="3_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://c0a00yjdhty4m" path="res://boundaries.tscn" id="4_u3cyc"]
+[ext_resource type="PackedScene" uid="uid://ddxcnwvqp7dld" path="res://Boundaries_Aussen.tscn" id="5_m7jmp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fch8"]
 size = Vector2(29, 14.25)
@@ -37,5 +38,9 @@ position = Vector2(-2, 2.875)
 shape = SubResource("RectangleShape2D_3fch8")
 
 [node name="Boundaries" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
+position = Vector2(-4, 0)
+
+[node name="Area2D" parent="." unique_id=1379189615 instance=ExtResource("5_m7jmp")]
 
 [connection signal="area_entered" from="Boundaries" to="CharacterBody2D" method="_on_boundaries_area_entered"]
+[connection signal="area_entered" from="Area2D" to="CharacterBody2D" method="_on_area_2d_area_entered"]
