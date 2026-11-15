@@ -60,7 +60,7 @@ position = Vector2(-4, 0)
 [node name="GoalArea" type="Area2D" parent="." unique_id=1473650242]
 
 [node name="GoalCollisionShape" type="CollisionShape2D" parent="GoalArea" unique_id=8577697]
-position = Vector2(494, 650)
+position = Vector2(487, 650)
 shape = SubResource("RectangleShape2D_dgfsc")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=315135335]
