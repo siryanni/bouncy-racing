@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dpqwpi502h42q" path="res://character_body_2d.gd" id="2_u3cyc"]
 [ext_resource type="Texture2D" uid="uid://dgccdpcgjvleq" path="res://car-sprite.png" id="3_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://c0a00yjdhty4m" path="res://boundaries.tscn" id="4_u3cyc"]
+[ext_resource type="AudioStream" uid="uid://b8vx0jvxhjla4" path="res://assets/accelerating.mp3" id="4_xlvrw"]
 [ext_resource type="PackedScene" uid="uid://ddxcnwvqp7dld" path="res://Boundaries_Aussen.tscn" id="5_m7jmp"]
 [ext_resource type="Texture2D" uid="uid://clhfs1u5weelr" path="res://tacho_bg.png" id="6_y2354"]
 [ext_resource type="Texture2D" uid="uid://c2bx101kfg8vf" path="res://tacho_nadel.png" id="7_ni31j"]
@@ -51,6 +52,9 @@ position = Vector2(0, 1)
 [node name="CarCollisionShape" type="CollisionShape2D" parent="CarCharacter/CarArea" unique_id=696948346]
 position = Vector2(-2, 2.875)
 shape = SubResource("RectangleShape2D_3fch8")
+
+[node name="accelerationSound" type="AudioStreamPlayer2D" parent="CarCharacter" unique_id=1788532933]
+stream = ExtResource("4_xlvrw")
 
 [node name="Boundaries" parent="." unique_id=403025889 instance=ExtResource("4_u3cyc")]
 position = Vector2(-4, 0)

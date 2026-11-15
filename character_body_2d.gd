@@ -12,9 +12,11 @@ class_name main
 
 @onready var timerLabel = $"../CanvasLayer/Timer"
 @onready var Car = $CarSprite
+@onready var ASound = $accelerationSound
 @onready var speedometerLabel = $"../CanvasLayer/speedometer"
 @onready var speedometerNeedle = $"../CanvasLayer/speedometeNeedleSprite"
-@onready var resetTime=0;
+var resetTime=0;
+var roundTimesRecord=""
 const CollisionFricionConstant=0.5 # if 1 then no friction is added, the velocity says the same, if 0 all velocity is removed
 const vPixSecToVKmHConstant = 1.0/3.0
 
@@ -46,7 +48,7 @@ func _physics_process(delta: float) -> void:
 	speedometerNeedle.rotation_degrees=speedToNeedleRotation(getVelocityinKmH())
 	
 	#labels
-	timerLabel.text="Time: "+str((getTimeMs()-resetTime)/1000)+"s";
+	timerLabel.text="Record Times:"+str(roundTimesRecord)+" Time: "+str((getTimeMs()-resetTime)/1000)+"s";
 	speedometerLabel.text="Speed: "+str(getVelocityinKmH())+"km/h"
 	
 	# process friction 
@@ -70,6 +72,8 @@ func _physics_process(delta: float) -> void:
 
 	velocity.x += cos(rotation) * totalAdditionalVelocity
 	velocity.y += sin(rotation) * totalAdditionalVelocity
+	
+	if(not direction[1]==0):ASound.play()
 	move_and_slide()
 
 func _on_boundaries_area_entered(area: Area2D) -> void:#boundries
@@ -89,7 +93,9 @@ func _on_area_2d_area_entered(area: Area2D) -> void:#boundries2
 
 
 func _on_goal_area_area_entered(area: Area2D) -> void:#goal
+	roundTimesRecord+=str((getTimeMs()-resetTime)/1000)+"s\n"
 	resetTime=getTimeMs();
+	
 	print("goal reached")
 
 func UpdateCarTexture(index: int)-> void:
