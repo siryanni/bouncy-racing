@@ -11,7 +11,7 @@ class_name main
 ]
 
 @onready var timerLabel = $"../CanvasLayer/Timer"
-@onready var Car = $"."
+@onready var Car = $CarSprite
 @onready var speedometerLabel = $"../CanvasLayer/speedometer"
 @onready var speedometerNeedle = $"../CanvasLayer/speedometeNeedleSprite"
 @onready var resetTime=0;
@@ -31,6 +31,8 @@ func getVelocityinKmH() -> float:
 	return vKmH
 	
 func _physics_process(delta: float) -> void:
+	
+	UpdateCarTexture(Global.carTextureIndex)
 	
 	#log
 	print("Processing tick:"+

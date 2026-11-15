@@ -3,12 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://ymf7pij1baqm" path="res://auto_lila.png" id="1_0jmjn"]
 [ext_resource type="Texture2D" uid="uid://dgccdpcgjvleq" path="res://car-sprite.png" id="1_3s08j"]
 [ext_resource type="Texture2D" uid="uid://b4nodg4cvswlk" path="res://assets/garage.png" id="1_4ejyg"]
-[ext_resource type="Script" uid="uid://djq6mijg2echf" path="res://button.gd" id="1_p2t0x"]
+[ext_resource type="Script" uid="uid://bhcqgue7nshaw" path="res://1.gd" id="1_8g4m6"]
 [ext_resource type="Texture2D" uid="uid://ctfvi2hlageb2" path="res://Car.png" id="2_jvn2w"]
+[ext_resource type="Script" uid="uid://b1cqqpnhl2kvh" path="res://2.gd" id="2_p2t0x"]
 [ext_resource type="Texture2D" uid="uid://t1wg0yn7ng6c" path="res://auto_braun.png" id="2_qfkxd"]
 [ext_resource type="Texture2D" uid="uid://ylq0k5fbxs5i" path="res://assets/bmw.png" id="3_8g4m6"]
+[ext_resource type="Script" uid="uid://bckgc6hetjmwn" path="res://3.gd" id="3_bvirc"]
 [ext_resource type="Texture2D" uid="uid://put23tehth70" path="res://auto_gelb.png" id="4_chw17"]
+[ext_resource type="Script" uid="uid://l3l7c61gxe5i" path="res://4.gd" id="4_vkf0m"]
+[ext_resource type="Script" uid="uid://5mylymoxna5k" path="res://5.gd" id="5_oilq0"]
+[ext_resource type="Script" uid="uid://c5omnves13gh6" path="res://6.gd" id="6_hmexc"]
 [ext_resource type="Texture2D" uid="uid://sscldcfp43cu" path="res://assets/mazdamx1995na.png" id="7_p2t0x"]
+[ext_resource type="Script" uid="uid://ce2cw00c72oxp" path="res://7.gd" id="12_62wir"]
 
 [node name="Control" type="Control" unique_id=73484604]
 layout_mode = 3
@@ -30,7 +36,7 @@ offset_left = 184.0
 offset_top = 136.0
 offset_right = 298.0
 offset_bottom = 246.0
-script = ExtResource("1_p2t0x")
+script = ExtResource("1_8g4m6")
 
 [node name="2" type="Button" parent="ColorRect/1" unique_id=785209948]
 layout_mode = 0
@@ -38,6 +44,7 @@ offset_left = 135.0
 offset_top = -2.0
 offset_right = 249.0
 offset_bottom = 110.0
+script = ExtResource("2_p2t0x")
 
 [node name="3" type="Button" parent="ColorRect/1/2" unique_id=1389325118]
 layout_mode = 0
@@ -45,6 +52,7 @@ offset_left = 135.0
 offset_top = -2.0
 offset_right = 249.0
 offset_bottom = 112.0
+script = ExtResource("3_bvirc")
 
 [node name="4" type="Button" parent="ColorRect/1/2/3" unique_id=414356206]
 layout_mode = 0
@@ -52,6 +60,7 @@ offset_left = 135.0
 offset_top = -2.0
 offset_right = 249.0
 offset_bottom = 114.0
+script = ExtResource("4_vkf0m")
 
 [node name="5" type="Button" parent="ColorRect/1/2/3/4" unique_id=1067415931]
 layout_mode = 0
@@ -59,6 +68,7 @@ offset_left = 135.0
 offset_top = -2.0
 offset_right = 249.0
 offset_bottom = 116.0
+script = ExtResource("5_oilq0")
 
 [node name="6" type="Button" parent="ColorRect/1/2/3/4/5" unique_id=1813679578]
 layout_mode = 0
@@ -66,6 +76,7 @@ offset_left = 135.0
 offset_top = -2.0
 offset_right = 249.0
 offset_bottom = 118.0
+script = ExtResource("6_hmexc")
 
 [node name="default" type="Sprite2D" parent="ColorRect/1/2/3/4/5/6" unique_id=934335422]
 position = Vector2(65.00001, 66.99999)
@@ -97,6 +108,7 @@ layout_mode = 0
 offset_top = 256.0
 offset_right = 114.0
 offset_bottom = 366.0
+script = ExtResource("12_62wir")
 
 [node name="Button" type="Button" parent="ColorRect/1/7" unique_id=68509297]
 layout_mode = 0
@@ -149,3 +161,9 @@ scale = Vector2(0.111328155, 0.10644531)
 texture = ExtResource("4_chw17")
 
 [connection signal="pressed" from="ColorRect/1" to="ColorRect/1" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/1/2" to="ColorRect/1/2" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/1/2/3" to="ColorRect/1" method="_on__pressed"]
+[connection signal="pressed" from="ColorRect/1/2/3/4" to="ColorRect/1/2/3/4" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/1/2/3/4/5" to="ColorRect/1/2/3/4/5" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/1/2/3/4/5/6" to="ColorRect/1/2/3/4/5/6" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/1/7" to="ColorRect/1/7" method="_on_pressed"]

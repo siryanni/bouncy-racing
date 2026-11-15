@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b3y6qrhihemhu"]
 
 [ext_resource type="Texture2D" uid="uid://wvd8a1trt1rd" path="res://assets/play.png" id="1_h7a2f"]
-[ext_resource type="Script" uid="uid://djq6mijg2echf" path="res://button.gd" id="1_qoqlk"]
+[ext_resource type="Script" uid="uid://bek80jstsusco" path="res://play_button.gd" id="1_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://b4nodg4cvswlk" path="res://assets/garage.png" id="2_qoqlk"]
-[ext_resource type="Script" uid="uid://dbehv6602ar8e" path="res://button_2.gd" id="3_7r1g0"]
+[ext_resource type="Script" uid="uid://b88m6a1joehfb" path="res://garage.gd" id="3_7r1g0"]
 [ext_resource type="Texture2D" uid="uid://cxfqnvlx6v01n" path="res://assets/logo.png" id="3_iwfq2"]
 
 [node name="Control" type="Control" unique_id=941539361]
@@ -27,7 +27,7 @@ offset_left = 67.0
 offset_top = 157.0
 offset_right = 316.0
 offset_bottom = 249.0
-script = ExtResource("1_qoqlk")
+script = ExtResource("1_iwfq2")
 
 [node name="Play" type="Sprite2D" parent="ColorRect" unique_id=1633749953]
 position = Vector2(200, 216)
