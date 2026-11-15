@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://dcbxtemuu3e6"]
+
+[ext_resource type="Texture2D" uid="uid://b4nodg4cvswlk" path="res://bouncy-racing-main/assets/garage.png" id="1_4ejyg"]
+
+[node name="Control" type="Control" unique_id=73484604]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2079661776]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 647.0
+color = Color(0.30692267, 0.3069227, 0.3069227, 1)
+
+[node name="Button" type="Button" parent="ColorRect" unique_id=1159516503]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 136.0
+offset_right = 298.0
+offset_bottom = 246.0
+
+[node name="Button" type="Button" parent="ColorRect/Button" unique_id=785209948]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 110.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button" unique_id=1389325118]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 112.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button/Button" unique_id=414356206]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 114.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button/Button/Button" unique_id=1067415931]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 116.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button/Button/Button/Button" unique_id=1813679578]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 118.0
+
+[node name="Button2" type="Button" parent="ColorRect/Button" unique_id=1779899127]
+layout_mode = 0
+offset_top = 256.0
+offset_right = 114.0
+offset_bottom = 366.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button2" unique_id=68509297]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 110.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button2/Button" unique_id=1921579826]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 2.0
+offset_right = 251.0
+offset_bottom = 116.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button2/Button/Button" unique_id=153048049]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 114.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button2/Button/Button/Button" unique_id=1754172231]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 116.0
+
+[node name="Button" type="Button" parent="ColorRect/Button/Button2/Button/Button/Button/Button" unique_id=129197454]
+layout_mode = 0
+offset_left = 135.0
+offset_top = -2.0
+offset_right = 249.0
+offset_bottom = 118.0
+
+[node name="Garage" type="Sprite2D" parent="ColorRect/Button" unique_id=588224023]
+position = Vector2(388.00003, 195.99997)
+scale = Vector2(8.125, 5.1249995)
+texture = ExtResource("1_4ejyg")
