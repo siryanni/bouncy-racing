@@ -24,10 +24,10 @@ position = Vector2(559, 657)
 script = ExtResource("2_u3cyc")
 
 [node name="Timer" type="Label" parent="CarCharacter" unique_id=1781520734]
-offset_left = -242.0
-offset_top = -193.0
-offset_right = -150.0
-offset_bottom = -129.0
+offset_left = 126.0
+offset_top = -100.0
+offset_right = 194.0
+offset_bottom = -69.0
 
 [node name="CarFollowingCamara" type="Camera2D" parent="CarCharacter" unique_id=2067092229]
 position = Vector2(6, -1)
