@@ -3,12 +3,12 @@ extends CharacterBody2D
 @onready var resetTime=0;
 const CollisionFricionConstant=0.5 # if 1 then no friction is added, the velocity says the same, if 0 all velocity is removed
 
-func getTimeSec() -> float:
-	return  Time.get_ticks_msec()/1000; 
+func getTimeMs() -> float:
+	return  Time.get_ticks_msec(); 
 	
 func _physics_process(delta: float) -> void:
-	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees)+"\n Time in ticks ms:"+str(getTimeSec()))
-	timerLabel.text="Time:"+str(getTimeSec()-resetTime);
+	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees)+"\n Time in ticks ms:"+str(getTimeMs()))
+	timerLabel.text="Time:"+str((getTimeMs()-resetTime)/1000);
 	# process friction 
 	if(velocity.x>0):velocity.x-=1;
 	if(velocity.y>0):velocity.y-=1;
@@ -49,5 +49,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:#boundries2
 
 
 func _on_goal_area_area_entered(area: Area2D) -> void:#goal
-	resetTime=getTimeSec();
+	resetTime=getTimeMs();
 	print("goal reached")

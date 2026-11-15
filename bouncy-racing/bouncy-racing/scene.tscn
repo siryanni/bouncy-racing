@@ -25,7 +25,6 @@ script = ExtResource("2_u3cyc")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="CarCharacter" unique_id=1525480804]
 position = Vector2(12, 4)
-emitting = false
 amount = 200
 lifetime = 2.0
 emission_shape = 1
@@ -65,10 +64,10 @@ shape = SubResource("RectangleShape2D_dgfsc")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=315135335]
 
 [node name="Timer" type="Label" parent="CanvasLayer" unique_id=1781520734]
-offset_left = 791.0
-offset_top = 25.0
-offset_right = 860.0
-offset_bottom = 67.0
+offset_left = 947.0
+offset_top = 19.0
+offset_right = 1016.0
+offset_bottom = 61.0
 theme_override_font_sizes/font_size = 30
 text = "TEXT"
 
