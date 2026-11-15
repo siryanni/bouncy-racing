@@ -1,14 +1,28 @@
 extends CharacterBody2D
 @onready var timerLabel = $"../CanvasLayer/Timer"
+@onready var speedometerLabel = $"../CanvasLayer/speedometer"
 @onready var resetTime=0;
 const CollisionFricionConstant=0.5 # if 1 then no friction is added, the velocity says the same, if 0 all velocity is removed
+const vPixSecToVKmHConstant = 1.0/3.0
 
 func getTimeMs() -> float:
 	return  Time.get_ticks_msec(); 
 	
+func getVelocityinKmH() -> float: 
+	var vPixSec = velocity.x+velocity.y
+	if(vPixSec<0):vPixSec=-vPixSec
+	var vKmH = vPixSec*vPixSecToVKmHConstant
+	return vKmH
+	
 func _physics_process(delta: float) -> void:
+	
+	#log
 	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees)+"\n Time in ticks ms:"+str(getTimeMs()))
-	timerLabel.text="Time:"+str((getTimeMs()-resetTime)/1000);
+	
+	#labels
+	timerLabel.text="Time: "+str((getTimeMs()-resetTime)/1000)+"s";
+	speedometerLabel.text="Speed: "+str(getVelocityinKmH())+"km/h"
+	
 	# process friction 
 	if(velocity.x>0):velocity.x-=1;
 	if(velocity.y>0):velocity.y-=1;
