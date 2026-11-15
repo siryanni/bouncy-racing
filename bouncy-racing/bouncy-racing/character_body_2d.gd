@@ -1,9 +1,13 @@
 extends CharacterBody2D
 @onready var timerLabel = $"../CanvasLayer/Timer"
 @onready var speedometerLabel = $"../CanvasLayer/speedometer"
+@onready var speedometerNeedle = $"../CanvasLayer/speedometeNeedleSprite"
 @onready var resetTime=0;
 const CollisionFricionConstant=0.5 # if 1 then no friction is added, the velocity says the same, if 0 all velocity is removed
 const vPixSecToVKmHConstant = 1.0/3.0
+
+func speedToNeedleRotation(speed: float)->float:
+	return ((0.6)*speed)-90
 
 func getTimeMs() -> float:
 	return  Time.get_ticks_msec(); 
@@ -17,7 +21,15 @@ func getVelocityinKmH() -> float:
 func _physics_process(delta: float) -> void:
 	
 	#log
-	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees)+"\n Time in ticks ms:"+str(getTimeMs()))
+	print("Processing tick:"+
+	"\n global_position:"+str(global_position)+
+	"\n velocity:"+str(velocity)+
+	"\n rotation:"+str(rotation_degrees)+
+	"\n Time in ticks ms:"+str(getTimeMs())+
+	"\n Speed:"+str(getVelocityinKmH()))
+	
+	#rotate speedometer needle
+	speedometerNeedle.rotation_degrees=speedToNeedleRotation(getVelocityinKmH())
 	
 	#labels
 	timerLabel.text="Time: "+str((getTimeMs()-resetTime)/1000)+"s";

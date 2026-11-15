@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://dgccdpcgjvleq" path="res://car-sprite.png" id="3_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://c0a00yjdhty4m" path="res://boundaries.tscn" id="4_u3cyc"]
 [ext_resource type="PackedScene" uid="uid://ddxcnwvqp7dld" path="res://Boundaries_Aussen.tscn" id="5_m7jmp"]
+[ext_resource type="Texture2D" uid="uid://clhfs1u5weelr" path="res://tacho_bg.png" id="6_y2354"]
+[ext_resource type="Texture2D" uid="uid://c2bx101kfg8vf" path="res://tacho_nadel.png" id="7_ni31j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3fch8"]
 size = Vector2(29, 14.25)
@@ -72,12 +74,23 @@ theme_override_font_sizes/font_size = 30
 text = "TIME"
 
 [node name="speedometer" type="Label" parent="CanvasLayer" unique_id=1526713663]
+visible = false
 offset_left = 313.0
 offset_top = 585.0
 offset_right = 494.0
 offset_bottom = 654.0
 theme_override_font_sizes/font_size = 50
 text = "SPEED"
+
+[node name="speedometerSprite" type="Sprite2D" parent="CanvasLayer" unique_id=235870490]
+position = Vector2(560, 455)
+texture = ExtResource("6_y2354")
+
+[node name="speedometeNeedleSprite" type="Sprite2D" parent="CanvasLayer" unique_id=1447167135]
+position = Vector2(550, 632)
+scale = Vector2(0.41210938, 0.484375)
+texture = ExtResource("7_ni31j")
+offset = Vector2(7.279663, -92.9032)
 
 [connection signal="area_entered" from="Boundaries" to="CarCharacter" method="_on_boundaries_area_entered"]
 [connection signal="area_entered" from="Boundaries2" to="CarCharacter" method="_on_area_2d_area_entered"]
