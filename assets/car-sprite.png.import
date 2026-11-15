@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bsu12p3vo2yhl"
-path="res://.godot/imported/car-sprite.png-0972d1f121104e8bb1ec781674d82449.ctex"
+path="res://.godot/imported/car-sprite.png-bd4550ea02abda825917feea2643f3e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bouncy-racing-main/assets/car-sprite.png"
-dest_files=["res://.godot/imported/car-sprite.png-0972d1f121104e8bb1ec781674d82449.ctex"]
+source_file="res://assets/car-sprite.png"
+dest_files=["res://.godot/imported/car-sprite.png-bd4550ea02abda825917feea2643f3e3.ctex"]
 
 [params]
 

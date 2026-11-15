@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d38h24dh4n2c2"
-path="res://.godot/imported/Map.png-576283d3781faa711465499c5917cb51.ctex"
+path="res://.godot/imported/Map.png-0823e9f6d345efe07b57eedf27d429f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bouncy-racing-main/assets/Map.png"
-dest_files=["res://.godot/imported/Map.png-576283d3781faa711465499c5917cb51.ctex"]
+source_file="res://assets/Map.png"
+dest_files=["res://.godot/imported/Map.png-0823e9f6d345efe07b57eedf27d429f0.ctex"]
 
 [params]
 
