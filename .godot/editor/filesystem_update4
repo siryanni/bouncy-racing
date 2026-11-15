@@ -1,2 +1,7 @@
 res://button.gd
 res://MainMenu.tscn
+res://garage.tscn
+res://global.gd
+res://character_body_2d.gd
+res://scene.tscn
+res://button_2.gd

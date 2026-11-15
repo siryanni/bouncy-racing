@@ -1,5 +1,17 @@
 extends CharacterBody2D
+class_name main
+@onready var carTextures = [
+	preload("res://auto_gelb.png"),
+	preload("res://assets/Car.png"),
+	preload("res://auto_lila.png"),
+	preload("res://assets/bmw.png"),
+	preload("res://auto_braun.png"),
+	preload("res://car-sprite.png"),
+	preload("res://assets/mazdamx1995na.png")
+]
+
 @onready var timerLabel = $"../CanvasLayer/Timer"
+@onready var Car = $"."
 @onready var speedometerLabel = $"../CanvasLayer/speedometer"
 @onready var speedometerNeedle = $"../CanvasLayer/speedometeNeedleSprite"
 @onready var resetTime=0;
@@ -77,3 +89,6 @@ func _on_area_2d_area_entered(area: Area2D) -> void:#boundries2
 func _on_goal_area_area_entered(area: Area2D) -> void:#goal
 	resetTime=getTimeMs();
 	print("goal reached")
+
+func UpdateCarTexture(index: int)-> void:
+		Car.texture = carTextures[index]

@@ -20,7 +20,7 @@ offset_right = 1154.0
 offset_bottom = 646.0
 color = Color(0.5132329, 0.5132329, 0.5132329, 1)
 
-[node name="Button" type="Button" parent="ColorRect" unique_id=1246941618]
+[node name="play_button" type="Button" parent="ColorRect" unique_id=1246941618]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 67.0
@@ -34,7 +34,7 @@ position = Vector2(200, 216)
 scale = Vector2(2.1875002, 2.375)
 texture = ExtResource("1_h7a2f")
 
-[node name="Button2" type="Button" parent="ColorRect" unique_id=1008535469]
+[node name="garage" type="Button" parent="ColorRect" unique_id=1008535469]
 layout_mode = 0
 offset_left = 66.0
 offset_top = 301.0
@@ -52,4 +52,5 @@ position = Vector2(778.5, 294.5)
 scale = Vector2(7.546875, 6.7031255)
 texture = ExtResource("3_iwfq2")
 
-[connection signal="pressed" from="ColorRect/Button" to="ColorRect/Button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/play_button" to="ColorRect/play_button" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/garage" to="ColorRect/garage" method="_on_pressed"]
