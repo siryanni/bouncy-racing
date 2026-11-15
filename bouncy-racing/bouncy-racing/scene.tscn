@@ -15,19 +15,13 @@ size = Vector2(15, 56)
 [node name="Node2D" type="Node2D" unique_id=2050125218]
 
 [node name="Map" type="Sprite2D" parent="." unique_id=2011843877]
-position = Vector2(588, 314)
+position = Vector2(580, 315)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_m7jmp")
 
 [node name="CarCharacter" type="CharacterBody2D" parent="." unique_id=1531508817]
 position = Vector2(559, 657)
 script = ExtResource("2_u3cyc")
-
-[node name="Timer" type="Label" parent="CarCharacter" unique_id=1781520734]
-offset_left = 126.0
-offset_top = -100.0
-offset_right = 194.0
-offset_bottom = -69.0
 
 [node name="CarFollowingCamara" type="Camera2D" parent="CarCharacter" unique_id=2067092229]
 position = Vector2(6, -1)
@@ -56,6 +50,16 @@ position = Vector2(-4, 0)
 [node name="GoalCollisionShape" type="CollisionShape2D" parent="GoalArea" unique_id=8577697]
 position = Vector2(494, 650)
 shape = SubResource("RectangleShape2D_dgfsc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=315135335]
+
+[node name="Timer" type="Label" parent="CanvasLayer" unique_id=1781520734]
+offset_left = 791.0
+offset_top = 25.0
+offset_right = 860.0
+offset_bottom = 67.0
+theme_override_font_sizes/font_size = 30
+text = "TEXT"
 
 [connection signal="area_entered" from="Boundaries" to="CarCharacter" method="_on_boundaries_area_entered"]
 [connection signal="area_entered" from="Boundaries2" to="CarCharacter" method="_on_area_2d_area_entered"]

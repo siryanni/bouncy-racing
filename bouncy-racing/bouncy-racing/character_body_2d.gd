@@ -1,9 +1,14 @@
 extends CharacterBody2D
+@onready var timerLabel = $"../CanvasLayer/Timer"
+@onready var resetTime=0;
+const CollisionFricionConstant=0.5 # if 1 then no friction is added, the velocity says the same, if 0 all velocity is removed
 
-
-func _physics_process(delta: float) -> void:
-	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees))
+func getTimeSec() -> float:
+	return  Time.get_ticks_msec()/1000; 
 	
+func _physics_process(delta: float) -> void:
+	print("Processing tick:\n global_position:"+str(global_position)+"\n velocity:"+str(velocity)+"\n rotation:"+str(rotation_degrees)+"\n Time in ticks ms:"+str(getTimeSec()))
+	timerLabel.text="Time:"+str(getTimeSec()-resetTime);
 	# process friction 
 	if(velocity.x>0):velocity.x-=1;
 	if(velocity.y>0):velocity.y-=1;
@@ -27,22 +32,22 @@ func _physics_process(delta: float) -> void:
 	velocity.y += sin(rotation) * totalAdditionalVelocity
 	move_and_slide()
 
-func _on_boundaries_area_entered(area: Area2D) -> void:
+func _on_boundaries_area_entered(area: Area2D) -> void:#boundries
 	print("collided")
 	velocity.x=-velocity.x
 	velocity.y=-velocity.y
 	return;	
 
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func _on_area_2d_area_entered(area: Area2D) -> void:#boundries2
 	print("collided")
 	velocity.x=-velocity.x
 	velocity.y=-velocity.y
+	velocity.x=velocity.x*CollisionFricionConstant
+	velocity.y=velocity.y*CollisionFricionConstant
 	return;	
 
 
-func _on_goal_area_area_entered(area: Area2D) -> void:
-	var label = $Timer
-	label.text="goal reached"
+func _on_goal_area_area_entered(area: Area2D) -> void:#goal
+	resetTime=getTimeSec();
 	print("goal reached")
-	pass # Replace with function body.
